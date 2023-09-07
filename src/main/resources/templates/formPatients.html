@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="template1.html"
+>
+
+<head>
+  <meta charset="UTF-8">
+  <title>New Patient</title>
+</head>
+<body>
+<div layout:fragment="content">
+  <div class="row mt-3" >
+    <div class="col-md-6 offset-3">
+      <div class="card">
+        <div class="card-header"> New patient</div>
+        <div class="card-body">
+          <div class="p-3" >
+            <div>
+              <form th:action="@{/savePatient}" method="post">
+                <div class="mb-2">
+                  <label class="form-label" >Name</label>
+                  <input class="form-control" type="text" name="nom" th:value="${patient.nom}" >
+                  <span class="text-danger" th:errors="${patient.nom}" ></span>
+                </div>
+                <div class="mb-2">
+                  <label class="form-label" >Date of birth</label>
+                  <input class="form-control" type="date" name="dateOfBirth" th:value="${patient.dateOfBirth}">
+                  <span class="text-danger" th:errors="${patient.dateOfBirth}" ></span>
+
+                </div>
+                <div class="mb-2">
+                  <label class="form-label" >Sick</label>
+                  <input class="form-check-input" type="checkbox" name="sick" th:checked="${patient.sick}" >
+                  <span class="text-danger" th:errors="${patient.sick}" ></span>
+
+                </div>
+                <div class="mb-2">
+                  <label class="form-label" >Score</label>
+                  <input class="form-control" type="text" name="score" th:value="${patient.score}">
+                  <span class="text-danger" th:errors="${patient.score}" ></span>
+                </div>
+                <button class="btn btn-success" >Save</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

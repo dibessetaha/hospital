@@ -26,14 +26,14 @@ public class HospitalApplication implements CommandLineRunner {
         patient1.setNom("Mohammed");
         patient1.setDateOfBirth(new Date());
         patient1.setSick(false);
-        patient1.setScore(56);
+        patient1.setScore(156);
 
         Patient patient2 = new Patient(null,"Taha",new Date(), false, 123);
 
         Patient patient3 = Patient.builder()
                 .nom("Ahmad")
                 .dateOfBirth(new Date())
-                .score(45)
+                .score(145)
                 .sick(false)
                 .build();
 
